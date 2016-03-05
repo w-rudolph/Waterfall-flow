@@ -41,7 +41,7 @@ var fixEvent = {
    timeId: null,
    process: function(fn){
      clearTimeout(this.timeId);
-	 setTimeout(fn, 100);
+	 this.timeId = setTimeout(fn, 100);
    }
 };
 $(function(){
