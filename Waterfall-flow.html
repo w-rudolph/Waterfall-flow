@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery插件 - 瀑布流</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="Waterfall-flow.js"></script>
+</head>
+<style type="text/css">
+ul{
+ list-style: none;
+}
+li.item{
+ width: 400px;
+ height: 400px;
+ position: absolute;
+ padding: 10px;
+ display: block;
+}
+li > div{
+ background: red;
+ width: 100%;
+ height: 100%;
+}
+.waterfallflow{
+ position: relative;
+}
+</style>
+
+<script type="text/javascript">
+
+function action(){
+  var num = Math.floor($(window).width() / $('.waterfallflow .item').eq(0).width());
+  $('.waterfallflow').waterfallflow({
+	   col: num,
+	   target: 'li.item'
+   });
+}
+
+var fixEvent = {
+   timeId: null,
+   process: function(fn){
+     clearTimeout(this.timeId);
+	 setTimeout(fn, 100);
+   }
+};
+$(function(){
+	action();
+	$(window).on('resize', function(){
+	   fixEvent.process(action);
+	});
+});
+
+</script>
+<body>
+  <ul class="waterfallflow">
+	<li class="item item-1" style="height: 500px;">
+		<div>item-1</div>
+	</li>
+	<li class="item item-2">
+		<div>item-2</div>
+	</li>
+	<li class="item item-3">
+		<div>item-3</div>
+	</li>
+	<li class="item item-4">
+		<div>item-4</div>
+	</li>
+	<li class="item item-5">
+		<div>item-5</div>
+	</li>
+	<li class="item item-6">
+		<div>item-6</div>
+	</li>
+	<li class="item item-7">
+		<div>item-7</div>
+	</li>
+	<li class="item item-8">
+		<div>item-8</div>
+	</li>
+	<li class="item item-9">
+		<div>item-9</div>
+	</li>
+	<li class="item item-10" style="height: 500px;">
+		<div>item-10</div>
+	</li>
+	<li class="item item-11">
+		<div>item-11</div>
+	</li>
+	<li class="item item-12">
+		<div>item-12</div>
+	</li>
+	<li class="item item-13">
+		<div>item-13</div>
+	</li>
+	<li class="item item-14" style="height: 500px;">
+		<div>item-14</div>
+	</li>
+	<li class="item item-15">
+		<div>item-15</div>
+	</li>
+	<li class="item item-16">
+		<div>item-16</div>
+	</li>
+	<li class="item item-17">
+		<div>item-17</div>
+	</li>
+	<li class="item item-18">
+		<div>item-18</div>
+	</li>
+	<li class="item item-19" style="height: 500px;">
+		<div>item-19</div>
+	</li>
+	<li class="item item-20">
+		<div>item-20</div>
+	</li>
+	<li class="item item-21">
+		<div>item-21</div>
+	</li>
+	<li class="item item-22">
+		<div>item-22</div>
+	</li>
+	<li class="item item-23">
+		<div>item-23</div>
+	</li>
+	<li class="item item-24">
+		<div>item-24</div>
+	</li>
+	<li class="item item-25">
+		<div>item-25</div>
+	</li>
+	<li class="item item-26">
+		<div>item-26</div>
+	</li>
+	<li class="item item-27">
+		<div>item-27</div>
+	</li>
+	<li class="item item-28">
+		<div>item-28</div>
+	</li>
+	<li class="item item-29">
+		<div>item-29</div>
+	</li>
+	<li class="item item-30">
+		<div>item-30</div>
+	</li>
+	<li class="item item-31">
+		<div>item-31</div>
+	</li>
+	<li class="item item-32">
+		<div>item-32</div>
+	</li>
+	<li class="item item-33">
+		<div>item-33</div>
+	</li>
+	<li class="item item-34">
+		<div>item-34</div>
+	</li>
+	<li class="item item-35">
+		<div>item-35</div>
+	</li>
+	<li class="item item-36">
+		<div>item-36</div>
+	</li>
+	<li class="item item-37">
+		<div>item-37</div>
+	</li>
+	<li class="item item-38">
+		<div>item-38</div>
+	</li>
+  </ul>
+</body>
+</html>
